@@ -53,8 +53,8 @@ export class WishlistComponent implements OnInit{
       next: (res) => {
 
         console.log(res);
-        localStorage.setItem("cartId" , res.data._id);
         this._CartService.numberProductOfCart.next(res.numOfCartItems);
+        localStorage.setItem("cartId" , res.data._id);
 
       },
       error: (err) => console.log(err)

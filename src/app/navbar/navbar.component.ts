@@ -30,6 +30,8 @@ export class NavbarComponent implements OnInit  {
         this._WishlistService.countOfWishlist.next(res.count);
         this._WishlistService.countOfWishlist.subscribe((newValue)=> {
 
+          console.log(newValue);
+          
           this.numberProductOfMyWishlist = newValue;
 
         });
