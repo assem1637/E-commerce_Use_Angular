@@ -79,7 +79,7 @@ export class AuthService implements OnInit{
 
   logOut() {
 
-    localStorage.removeItem("userToken");
+    localStorage.clear();
     this.userInfo.next(null);
     this._Router.navigate(["/login"]);
 

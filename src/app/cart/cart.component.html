@@ -1,73 +1,87 @@
 <div *ngIf="!isLoader; else loader">
 
-    <div *ngIf="userCart?.products.length > 0;" class="bg-main-light my-4">
+    <div *ngIf="userCart;else notFound">
 
-        <div class="cart p-4">
-            <div class="d-flex justify-content-between align-items-center pb-3">
-    
-               <div>
-                    <h3 class="fw-bold">Shop Cart</h3>
-                    <p class="text-main pb-3 m-0">Total Price: {{userCart?.totalCartPrice}} EGP</p>
-               </div>
-               <div>
-    
-                    <button (click)="clearAllProductsFromCart()" class="btn bg-danger text-white">Clear All</button>
-    
-               </div>
-    
-            </div>
-    
-            <div *ngFor="let product of userCart?.products" class="row py-4 border-bottom-light">
-    
-                <div class="col-md-1">
+        <div *ngIf="userCart?.products.length > 0" class="position-relative bg-main-light vh-100 my-4">
+
+            <div class="cart p-4 w-100 h-100">
+                <div class="d-flex justify-content-between align-items-center pb-3">
         
-                    <img [src]="product.product.imageCover" [alt]="product.product.title" class="w-100" />
+                   <div>
+                        <h3 class="fw-bold">Shop Cart</h3>
+                        <p class="text-main pb-3 m-0">Total Price: {{userCart?.totalCartPrice}} EGP</p>
+                   </div>
+                   <div>
+        
+                        <button (click)="clearAllProductsFromCart()" class="btn bg-danger text-white">Clear All</button>
+        
+                   </div>
         
                 </div>
-                <div class="col-md-11 d-flex justify-content-between align-items-center">
-    
-                    <div>
-                        <h4 class="h5">{{product.product.title.split(" ").splice(0,2).join(" ")}}</h4>
-                        <p class="m-0 p-0 text-main">Price: {{product.price}} EGP</p>
-                        <button (click)="deleteSpecificProductFromCart(product.product._id)" class="btn p-0 mt-2"><i class="text-main fa-regular fa-trash-can"></i> Remove</button>
+        
+                <div *ngFor="let product of userCart?.products" class="row py-4 border-bottom-light">
+        
+                    <div class="col-md-1">
+            
+                        <img [src]="product.product.imageCover" [alt]="product.product.title" class="w-100" />
+            
                     </div>
-    
-                    <div>
-                        <button (click)="updateSpecificProductInCart(product.product._id, product.count + 1)" class="btn border-main p-2 py-0 mx-2">+</button>
-                        <span>{{product.count}}</span>
-                        <button (click)="updateSpecificProductInCart(product.product._id, product.count - 1)" class="btn border-main p-2 py-0 mx-2">-</button>
+                    <div class="col-md-11 d-flex justify-content-between align-items-center">
+        
+                        <div>
+                            <h4 class="h5">{{product.product.title.split(" ").splice(0,2).join(" ")}}</h4>
+                            <p class="m-0 p-0 text-main">Price: {{product.price}} EGP</p>
+                            <button (click)="deleteSpecificProductFromCart(product.product._id)" class="btn p-0 mt-2"><i class="text-main fa-regular fa-trash-can"></i> Remove</button>
+                        </div>
+        
+                        <div>
+                            <button (click)="updateSpecificProductInCart(product.product._id, product.count + 1)" class="btn border-main p-2 py-0 mx-2">+</button>
+                            <span>{{product.count}}</span>
+                            <button (click)="updateSpecificProductInCart(product.product._id, product.count - 1)" class="btn border-main p-2 py-0 mx-2">-</button>
+                        </div>
+        
                     </div>
-    
+            
+                </div>
+        
+        
+                <div class="position-absolute bottom-0 start-0 p-3">
+        
+                    
+                    <a routerLink="/shippingAddress" class="text-white">
+                        <button (click)="onlinePayment(false)" class="btn bg-main text-white">Cash Payment</button>
+                    </a>
+        
+                    <a routerLink="/shippingAddress" class="text-white">
+                        <button (click)="onlinePayment(true)" class="btn bg-main mx-1 text-white">
+                            Online Payment
+                            <img [src]="visaLogo" height="22" width="22" alt="visa" />
+                        </button>
+                    </a>
+        
+        
                 </div>
         
             </div>
-    
-    
-            <div class="pt-4">
-    
-                
-                <a routerLink="/shippingAddress" class="text-white">
-                    <button (click)="onlinePayment(false)" class="btn bg-main text-white">Cash Payment</button>
-                </a>
-    
-                <a routerLink="/shippingAddress" class="text-white">
-                    <button (click)="onlinePayment(true)" class="btn bg-main mx-1 text-white">
-                        Online Payment
-                        <img [src]="visaLogo" height="22" width="22" alt="visa" />
-                    </button>
-                </a>
-    
-    
-            </div>
-    
+        
         </div>
-    
+
     </div>
+
+
 
 </div>
 
 
+<ng-template #notFound>
 
+    <div class="d-flex justify-content-center align-items-center w-100 vh-100">
+
+        <h3>Your Cart Is Empty</h3>
+
+    </div>
+
+</ng-template>
 
 
 

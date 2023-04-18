@@ -34,16 +34,19 @@ export class CartComponent implements OnInit{
 
       next: (res) => {
 
-        console.log(res.data);
         this.userCart = res.data;
-        console.log(res.data.products.length);
-        
         this._CartService.numberProductOfCart.next(res.data.products.length);
 
         this.isLoader = false;
 
       },
-      error: (err) => console.log(err)
+      error: (err) => {
+
+        console.log( this.userCart);
+        this.isLoader = false;
+        console.log(err);
+
+      }
       
     })
 
