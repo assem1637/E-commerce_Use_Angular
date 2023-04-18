@@ -36,13 +36,13 @@ export class CartComponent implements OnInit{
 
         this.userCart = res.data;
         this._CartService.numberProductOfCart.next(res.data.products.length);
-
+        
+        
         this.isLoader = false;
 
       },
       error: (err) => {
 
-        console.log( this.userCart);
         this.isLoader = false;
         console.log(err);
 
@@ -63,6 +63,7 @@ export class CartComponent implements OnInit{
         console.log(res.data);
         this.userCart = res.data;
         this._CartService.numberProductOfCart.next(0);
+        this.ngOnInit();
 
       },
       error: (err) => console.log(err)
@@ -82,6 +83,7 @@ export class CartComponent implements OnInit{
         console.log(res.data);
         this.userCart = res.data;
         this._CartService.numberProductOfCart.next(res.numOfCartItems);
+        this.ngOnInit();
 
       },
       error: (err) => console.log(err)

@@ -11,14 +11,14 @@ export class CategoriesService {
 
   getAllCategories():Observable<any> {
 
-    return this._HttpClient.get(`https://route-ecommerce-app.vercel.app/api/v1/categories`);
+    return this._HttpClient.get(`https://route-ecommerce.onrender.com/api/v1/categories`);
 
   };
 
 
   getProductsOfSpecificCategory(id:string):Observable<any> {
 
-    return this._HttpClient.get(`https://route-ecommerce-app.vercel.app/api/v1/products?category=${id}`);
+    return this._HttpClient.get(`https://route-ecommerce.onrender.com/api/v1/products?category=${id}`);
 
   };
 

@@ -26,7 +26,7 @@ export class CartService{
 
   addToCart(productId:string):Observable<any> {
 
-    return this._HttpClient.post("https://route-ecommerce-app.vercel.app/api/v1/cart" , {
+    return this._HttpClient.post("https://route-ecommerce.onrender.com/api/v1/cart" , {
 
         productId
 
@@ -43,7 +43,7 @@ export class CartService{
 
   getUserCart():Observable<any> {
 
-    return this._HttpClient.get("https://route-ecommerce-app.vercel.app/api/v1/cart" , {
+    return this._HttpClient.get("https://route-ecommerce.onrender.com/api/v1/cart" , {
 
       headers: this.headers
 
@@ -55,7 +55,7 @@ export class CartService{
 
   deleteUserCart():Observable<any> {
 
-    return this._HttpClient.delete("https://route-ecommerce-app.vercel.app/api/v1/cart" , {
+    return this._HttpClient.delete("https://route-ecommerce.onrender.com/api/v1/cart" , {
 
       headers: this.headers
 
@@ -67,7 +67,7 @@ export class CartService{
 
   deleteSpecificProductFromCart(productId:string):Observable<any> {
 
-    return this._HttpClient.delete(`https://route-ecommerce-app.vercel.app/api/v1/cart/${productId}` , {
+    return this._HttpClient.delete(`https://route-ecommerce.onrender.com/api/v1/cart/${productId}` , {
 
       headers: this.headers
 
@@ -79,7 +79,7 @@ export class CartService{
 
   updateSpecificProductInCart(productId:string , count:number):Observable<any>{
 
-    return this._HttpClient.put(`https://route-ecommerce-app.vercel.app/api/v1/cart/${productId}` , {
+    return this._HttpClient.put(`https://route-ecommerce.onrender.com/api/v1/cart/${productId}` , {
 
       count
 

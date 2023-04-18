@@ -64,14 +64,14 @@ export class AuthService implements OnInit{
 
   register(userData:object):Observable<any> {
 
-   return this._HttpClient.post("https://route-ecommerce-app.vercel.app/api/v1/auth/signup" , userData);
+   return this._HttpClient.post("https://route-ecommerce.onrender.com/api/v1/auth/signup" , userData);
 
   };
 
 
   login(userData:object):Observable<any> {
 
-    return this._HttpClient.post("https://route-ecommerce-app.vercel.app/api/v1/auth/signin" , userData);
+    return this._HttpClient.post("https://route-ecommerce.onrender.com/api/v1/auth/signin" , userData);
 
   };
 
@@ -88,7 +88,7 @@ export class AuthService implements OnInit{
 
   forgetPassword(email:string):Observable<any> {
 
-    return this._HttpClient.post("https://route-ecommerce-app.vercel.app/api/v1/auth/forgotPasswords" , {
+    return this._HttpClient.post("https://route-ecommerce.onrender.com/api/v1/auth/forgotPasswords" , {
       email:email
     });
 
@@ -97,7 +97,7 @@ export class AuthService implements OnInit{
 
   verifyResetCode(code:string):Observable<any> {
 
-    return this._HttpClient.post("https://route-ecommerce-app.vercel.app/api/v1/auth/verifyResetCode" , {
+    return this._HttpClient.post("https://route-ecommerce.onrender.com/api/v1/auth/verifyResetCode" , {
       resetCode:code
     });
 
@@ -107,7 +107,7 @@ export class AuthService implements OnInit{
 
   resetPassword(email:string , newPassword:string):Observable<any> {
 
-    return this._HttpClient.put("https://route-ecommerce-app.vercel.app/api/v1/auth/resetPassword" , {
+    return this._HttpClient.put("https://route-ecommerce.onrender.com/api/v1/auth/resetPassword" , {
      
       email: email,
       newPassword: newPassword
@@ -120,7 +120,7 @@ export class AuthService implements OnInit{
 
   changePassword(userData:object):Observable<any> {
 
-    return this._HttpClient.put(`https://route-ecommerce-app.vercel.app/api/v1/users/changeMyPassword` , userData , {
+    return this._HttpClient.put(`https://route-ecommerce.onrender.com/api/v1/users/changeMyPassword` , userData , {
 
         headers: this.headers
 

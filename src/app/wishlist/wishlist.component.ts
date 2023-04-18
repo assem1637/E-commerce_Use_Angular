@@ -25,7 +25,7 @@ export class WishlistComponent implements OnInit{
       next: (res) => {
 
 
-        console.log(res);
+        console.log(res , "ssa");
         this._WishlistService.countOfWishlist.next(res.count);
         this.countOfWishlist = this._WishlistService.countOfWishlist.value;
         this.productsOfWishlist = res.data;
@@ -33,7 +33,13 @@ export class WishlistComponent implements OnInit{
 
       },
       
-      error: (err) => console.log(err),
+      error: (err) => {
+
+        console.log(err);
+        
+        this.isLoader = false;
+
+      },
 
     });
 

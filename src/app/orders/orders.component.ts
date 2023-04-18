@@ -66,6 +66,7 @@ export class OrdersComponent implements OnInit{
       error: (err) => {
 
         console.log(err);
+        this.isLoader = false;
         
       }
 

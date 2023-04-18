@@ -12,7 +12,7 @@ export class ProductsService {
 
   getAllProducts(page:number):Observable<any> {
 
-    return this._HttpClient.get(`https://route-ecommerce-app.vercel.app/api/v1/products?page=${page}`);
+    return this._HttpClient.get(`https://route-ecommerce.onrender.com/api/v1/products?page=${page}`);
 
   };
 
@@ -20,7 +20,7 @@ export class ProductsService {
 
   getSpecificProduct(id:string):Observable<any> {
 
-    return this._HttpClient.get(`https://route-ecommerce-app.vercel.app/api/v1/products/${id}`);
+    return this._HttpClient.get(`https://route-ecommerce.onrender.com/api/v1/products/${id}`);
 
   };
 

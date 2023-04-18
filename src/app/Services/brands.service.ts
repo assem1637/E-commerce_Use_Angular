@@ -11,14 +11,14 @@ export class BrandsService {
 
   getAllBrands():Observable<any> {
 
-    return this._HttpClient.get(`https://route-ecommerce-app.vercel.app/api/v1/brands`);
+    return this._HttpClient.get(`https://route-ecommerce.onrender.com/api/v1/brands`);
 
   };
 
 
   getProductsOfSpecificBrand(brandId:string):Observable<any>{
 
-    return this._HttpClient.get(`https://route-ecommerce-app.vercel.app/api/v1/products?brand=${brandId}`);
+    return this._HttpClient.get(`https://route-ecommerce.onrender.com/api/v1/products?brand=${brandId}`);
 
   };
 

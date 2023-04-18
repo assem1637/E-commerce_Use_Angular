@@ -37,7 +37,7 @@ export class WishlistService {
 
   removeProductFromWishlist(productId:string):Observable<any> {
 
-    return this._HttpClient.delete(`https://route-ecommerce-app.vercel.app/api/v1/wishlist/${productId}` , {
+    return this._HttpClient.delete(`https://route-ecommerce.onrender.com/api/v1/wishlist/${productId}` , {
 
       headers: this.headers
 
@@ -50,7 +50,7 @@ export class WishlistService {
 
   getWishlistOfUser():Observable<any> {
 
-    return this._HttpClient.get(`https://route-ecommerce-app.vercel.app/api/v1/wishlist` , {
+    return this._HttpClient.get(`https://route-ecommerce.onrender.com/api/v1/wishlist` , {
 
       headers: this.headers
 
