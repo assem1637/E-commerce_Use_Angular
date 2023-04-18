@@ -1,0 +1,76 @@
+
+<div *ngIf="!isLoader; else loader" class="">
+
+
+        
+    <div *ngIf="productsOfWishlist?.length > 0;" class="bg-main-light my-4">
+
+        <div class="cart p-4">
+            <div class="d-flex justify-content-between align-items-center pb-3">
+
+            <div>
+                    <h3 class="fw-bold text-muted">Number Of Product In WishList: {{countOfWishlist}}</h3>
+            </div>
+
+            </div>
+
+            <div>
+
+                <div  *ngFor="let product of productsOfWishlist" class="row py-4 border-bottom-light">
+
+                    <div *ngIf="!isLoader" class="col-md-2">
+            
+                        <a [routerLink]="['/productDetails/'+ product._id]">
+        
+                            <img [src]="product?.imageCover" [alt]="product?.title" class="w-100" />
+        
+                        </a>
+            
+                    </div>
+                    <div *ngIf="!isLoader" class="col-md-10 d-flex justify-content-between align-items-center">
+        
+                        <div>
+                            <h4 class="h5">{{product?.title.split(" ").splice(0,2).join(" ")}}</h4>
+                            <p class="m-0 p-0 text-main">Price: {{product?.price}} EGP</p>
+                            <p class="m-0">
+                                <i class="fas fa-star rating-color"></i>
+                                <span class="ms-1 text-muted">{{product?.ratingsAverage}}</span>
+                            </p>
+                            <button (click)="deleteFromWishlist(product._id)" class="btn p-0 mt-2"><i class="text-main fa-regular fa-trash-can"></i> Remove</button>
+                        </div>
+        
+                        <div>
+                            <button (click)="addToCart(product._id)" class="btn bg-main text-white w-100 my-1">+ Add To Cart</button>
+                        </div>
+        
+                    </div>
+            
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<ng-template #loader>
+
+    <div class="d-flex justify-content-center align-items-center w-100 vh-100">
+
+        <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+            <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+        </svg>
+
+    </div>
+
+</ng-template>

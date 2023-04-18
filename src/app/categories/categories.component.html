@@ -1,0 +1,46 @@
+<div *ngIf="!isLoader; else loader">
+
+
+    <app-category-slider></app-category-slider>
+
+
+    <div *ngIf="categoriesInfo.length > 0;" class="py-4">
+
+    
+        <div class="row g-3">
+    
+            <div *ngFor="let category of categoriesInfo" class="col-md-3 col-6">
+
+                <a (click)="navigateTo(category._id)" class="cursor-pointer">
+
+                    <img height="200" [src]="category?.image" [alt]="category?.name" class="w-100" />
+                    <p>{{category?.name}}</p>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+<ng-template #loader>
+
+    <div class="d-flex justify-content-center align-items-center w-100 vh-100">
+
+        <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+            <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+        </svg>
+
+    </div>
+
+</ng-template>

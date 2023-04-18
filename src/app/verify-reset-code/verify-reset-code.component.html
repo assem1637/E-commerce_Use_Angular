@@ -1,0 +1,29 @@
+<div class="row w-75 mx-auto align-items-center vh-80">
+
+    <div class="w-100">
+
+        <h4 class="py-2">Please Enter Verification Code</h4>
+
+        <div *ngIf="apiError.length > 0" class="alert alert-danger">{{apiError}}</div>
+
+        <form [formGroup]="VerifyResetCode" (ngSubmit)="handleVerifyResetCode(VerifyResetCode)">
+    
+            <label for="resetCode">Reset Code:</label>
+            <input type="text" class="form-control mb-2" id="resetCode" formControlName="resetCode" />
+            <div *ngIf="VerifyResetCode.get('resetCode')?.errors && VerifyResetCode.get('resetCode')?.touched" class="alert alert-danger">
+                <p class="m-0" *ngIf="VerifyResetCode.get('resetCode')?.getError('required')">Reset Code Is Required</p>
+                <p class="m-0" *ngIf="VerifyResetCode.get('resetCode')?.getError('pattern')">It's Must Be 6 Numbers</p>
+            </div>
+
+            <button [disabled]="VerifyResetCode.invalid" type="submit" class="btn d-block bg-main me-auto text-white">
+    
+                <i *ngIf="isLoading" class="fas fa-spinner fa-spin"></i>
+                <span *ngIf="!isLoading">Verify Now</span>
+    
+            </button>
+
+        </form>
+
+    </div>
+
+</div>

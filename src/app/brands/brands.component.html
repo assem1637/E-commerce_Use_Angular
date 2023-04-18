@@ -1,0 +1,37 @@
+<div *ngIf="!isLoader; else loader">
+
+        <app-brand-slider></app-brand-slider>
+
+
+        <div *ngIf="brandsInfo.length > 0;" class="py-4">
+
+        
+            <div class="row g-3">
+        
+                <div *ngFor="let brand of brandsInfo" class="col-md-3 col-6">
+
+                    <a (click)="navigateTo(brand._id)" class="cursor-pointer">
+                        <img height="200" [src]="brand?.image" [alt]="brand?.name" class="w-100" />
+                        <p class="text-center">{{brand?.name}}</p>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+</div>
+
+
+<ng-template #loader>
+
+    <div class="d-flex justify-content-center align-items-center w-100 vh-100">
+
+        <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+            <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+        </svg>
+
+    </div>
+
+</ng-template>

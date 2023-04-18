@@ -1,0 +1,26 @@
+<div class="row py-4 gx-0">
+
+    <div class="col-md-9">
+
+        <owl-carousel-o [options]="customOptions">
+            <ng-template carouselSlide>
+                <img [src]="sliderImage1" class="w-100" height="400" />
+            </ng-template>  
+            <ng-template carouselSlide>
+                <img [src]="sliderImage2" class="w-100" height="400" />
+            </ng-template>  
+            <ng-template carouselSlide>
+                <img [src]="sliderImage3" class="w-100" height="400" />
+            </ng-template>  
+        </owl-carousel-o>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <img [src]="sliderImage2" class="w-100" height="200" />
+        <img [src]="sliderImage3" class="w-100" height="200" />
+
+    </div>
+
+</div>

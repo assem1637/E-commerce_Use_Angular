@@ -1,0 +1,54 @@
+<div *ngIf="productInfo;else notFoundData" class="row gy-2 justify-content-between align-items-center py-5">
+
+
+
+  <div class="col-md-4">
+
+      <owl-carousel-o [options]="customOptions">
+
+          <ng-container *ngFor="let slide of productInfo?.images">
+            <ng-template carouselSlide>
+              <img [src]="slide" [alt]="productInfo?.title" />
+            </ng-template>
+          </ng-container>
+      
+      </owl-carousel-o>
+
+  </div>
+
+
+  <div class="col-md-8">
+
+      <h3 class="h5">{{productInfo?.title}}</h3>
+      <p class="text-muted">{{productInfo?.description}}</p>
+
+      <div class="d-flex justify-content-between align-items-center">
+
+        <p class="text-main m-0">{{productInfo?.brand?.name}}</p>
+        <span  class="cursor-pointer text-main fs-18px">
+          <i (click)="select(productInfo?._id)" [id]="productInfo?._id" class="fa-regular fa-heart"></i>
+        </span>
+
+      </div>
+      <div class="d-flex justify-content-between align-items-center py-2">
+
+          <span>{{productInfo?.price}} EGP</span>
+          <p class="m-0">
+          <i class="fas fa-star rating-color"></i>
+          <span class="text-muted">{{productInfo?.ratingsAverage}}</span>
+          </p>
+
+      </div>
+
+      <button (click)="addToCart(productInfo?._id)" class="btn bg-main text-white w-100 my-1">+ Add To Cart</button>
+
+  </div>
+
+</div>
+
+
+<ng-template #notFoundData>
+
+  <h4 class="text-center">Not Found Any Data</h4>
+
+</ng-template>
