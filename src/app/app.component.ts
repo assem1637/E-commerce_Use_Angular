@@ -15,9 +15,9 @@ export class AppComponent implements OnInit{
 
       this.cartLoader = false;
 
-    } , 3000)
+    } , 3000);
 
-  }
+  };
 
 
 }

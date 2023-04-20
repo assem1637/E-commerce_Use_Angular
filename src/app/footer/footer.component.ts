@@ -10,8 +10,8 @@ export class FooterComponent {
   srcLogo:string = "./assets/logo.svg";
   amazonPay:string = "./assets/Amazon_Pay_logo.svg";
   american:string = "./assets/american-express.svg";
-  appStore:string = "./assets/appstore.jpg";
-  googlePlay:string = "./assets/google-play.png";
+  appStore:string = "./assets/app-store.svg";
+  googlePlay:string = "./assets/Google_Play.svg";
   masterCard:string = "./assets/MasterCard_Logo.svg";
   paypal:string = "./assets/PayPal.svg";
 

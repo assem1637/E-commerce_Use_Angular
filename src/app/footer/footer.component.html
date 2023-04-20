@@ -17,26 +17,38 @@
 
         <hr class="m-0" />
 
-        <div class="row justify-content-between gy-3 align-items-center py-4">
+        <div class="row justify-content-between gy-md-0 gy-3 align-items-center py-4">
 
-            <div class="col-md-7 d-flex justify-content-center justify-content-md-start align-items-center">
-                <p class="m-0 pe-2 fw-bold">Payment Partners</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <img [src]="american" alt="american-express" height="70" width="70" />
-                    <img [src]="amazonPay" alt="amazon-pay" height="40" width="80" class="ms-2" />
-                    <img [src]="masterCard" alt="masterCard" height="30" width="80" />
-                    <img [src]="paypal" alt="paypal" height="30" width="80" />
+            <div class="pt-2 col-md-7 row justify-content-center justify-content-md-start align-items-center">
+                <p class="m-0 col-md-12 col-sm-3 col-12 text-center pe-2 fw-bold">Payment Partners</p>
+                <div class="col-md-12 col-sm-9 col-12 gx-md-0 gx-2 row justify-content-md-between justify-content-start align-items-center">
+                    <div class="col-md-3 col-6 d-flex justify-content-md-between justify-content-center align-items-center">
+                        <img [src]="american" alt="american-express" height="80" width="80" />
+                    </div>
+                    <div class="col-md-3 col-6 d-flex justify-content-md-between justify-content-center align-items-center">
+                        <img [src]="amazonPay" alt="amazon-pay" height="50" width="90" class="ms-2" />
+                    </div>
+                    <div class="col-md-3 col-6  d-flex justify-content-md-between justify-content-center align-items-center">
+                        <img [src]="masterCard" alt="masterCard" height="40" width="90" />
+                    </div>
+                    <div class="col-md-3 col-6 d-flex justify-content-md-between justify-content-center align-items-center">
+                        <img [src]="paypal" alt="paypal" height="40" width="90" />
+                    </div>
                 </div>
             </div>
 
-            <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
-                <p class="m-0 fw-bold pe-3">Get Deliveries With FreshCart</p>
-                <div class="d-md-flex flex-column justify-content-end">
-                    <img [src]="appStore" alt="appStore" height="32" width="110" />
-                    <img class="ms-3" [src]="googlePlay" alt="googlePlay" height="30" width="80" />
+
+            <div class="pt-2 col-md-5 row justify-content-md-end justify-content-center align-items-center">
+                <p class="m-0 col-md-12 col-sm-3 col-12 text-center pe-2 fw-bold">Get Deliveries With FreshCart</p>
+                <div class="py-1 col-md-12 col-sm-9 col-12 gx-md-0 gx-2 row justify-content-md-center justify-content-start align-items-center">
+                    <div class="py-3 col-6 d-flex justify-content-center align-items-center">
+                        <img [src]="appStore" alt="appStore" height="40" width="100" />
+                    </div>
+                    <div class="col-6 d-flex justify-content-center align-items-center">
+                        <img [src]="googlePlay" alt="googlePlay" height="40" width="100" />
+                    </div>
                 </div>
             </div>
-
         </div>
 
         <hr class="m-0" />
